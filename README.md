@@ -43,9 +43,9 @@ Every requested item from the specification is implemented and verifiable:
 |---|---|---|
 | **Working source code** | `smartdialer/` (pure Python stdlib, 0 external dependencies) | `python3 -m unittest discover -s tests -t .` |
 | **README with setup** | `README.md` (no external installs, Python 3.10+ stdlib) | Just clone and run |
-| **Architecture diagram** | `docs/ARCHITECTURE.md` §1 (Mermaid pipeline) | Natively rendered on GitHub |
-| **Agent state machine** | `docs/ARCHITECTURE.md` §2 & `smartdialer/models.py` | 7 states + CAS transitions |
-| **Call state machine** | `docs/ARCHITECTURE.md` §2 & `smartdialer/models.py` | Rank-monotonic forward-only |
+| **Architecture diagram** | `docs/ARCHITECTURE_DIAGRAM.md` (also in `docs/ARCHITECTURE.md` §1) | Rendered on GitHub |
+| **Agent state machine** | `docs/AGENT_STATE_MACHINE.md` (also in `docs/ARCHITECTURE.md` §2) | 7 states + CAS transitions |
+| **Call state machine** | `docs/CALL_STATE_MACHINE.md` (also in `docs/ARCHITECTURE.md` §2) | Rank-monotonic forward-only |
 | **Progressive Dialer** | `smartdialer/pacing.py` (`ProgressivePacer`) | `TestSafetyAndPacing` |
 | **Predictive Pacing Engine** | `smartdialer/pacing.py` (`PredictivePacer`) | Mathematical Beta-posterior pacing |
 | **Safety Controller** | `smartdialer/safety.py` (`SafetyController`) | Unbypassable dispatch token |
@@ -53,7 +53,7 @@ Every requested item from the specification is implemented and verifiable:
 | **Tests** | `tests/test_dialer.py` (29 comprehensive unit & concurrency tests) | `python3 -m unittest discover -s tests -t . -v` |
 | **Basic simulation** | `smartdialer/sim.py` (Scenarios A–D + Outages) | `python3 -m smartdialer.sim --quick` |
 | **Basic load test** | `smartdialer/load_test.py` (Contention, throughput, scale latency) | `python3 -m smartdialer.load_test` |
-| **Architecture decision doc** | `docs/ARCHITECTURE.md` (Decisions, concurrency, scale, Q&A) | Full analysis & tradeoffs |
+| **Architecture decision doc** | `docs/ARCHITECTURE_DECISION.md` (also in `docs/ARCHITECTURE.md`) | Full analysis & tradeoffs |
 
 ## Not done (deliberately, in the timebox)
 No real telecom integration (the `TelecomProvider` interface is what a Plivo adapter would implement), no UI/dashboard,
